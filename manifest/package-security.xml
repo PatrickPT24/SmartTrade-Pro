@@ -31,6 +31,16 @@
         <name>PermissionSetGroup</name>
     </types>
 
+    <!-- Public Groups -->
+    <types>
+        <members>Trading_Team</members>
+        <members>Risk_Team</members>
+        <members>Compliance_Team</members>
+        <members>Portfolio_Team</members>
+        <members>SmartTrade_Admin_Team</members>
+        <name>Group</name>
+    </types>
+
     <version>67.0</version>
 
 </Package>
