@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_broker_accounts_must_have_API_Sta</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL(Account_Status__c,&quot;Closed&quot;),
+NOT(
+ISPICKVAL(API_Status__c,&quot;Disconnected&quot;)
+)
+)</errorConditionFormula>
+    <errorMessage>Closed broker accounts must have API Status = Disconnected.</errorMessage>
+</ValidationRule>

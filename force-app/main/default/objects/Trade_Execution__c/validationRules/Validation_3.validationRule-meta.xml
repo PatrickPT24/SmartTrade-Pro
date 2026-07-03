@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validation_3</fullName>
+    <active>true</active>
+    <errorConditionFormula>Execution_Date_Time__c &gt; NOW()</errorConditionFormula>
+    <errorDisplayField>Execution_Date_Time__c</errorDisplayField>
+    <errorMessage>Execution Date cannot be in the future.</errorMessage>
+</ValidationRule>

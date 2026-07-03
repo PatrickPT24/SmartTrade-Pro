@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Broker_Health__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (
+  ISPICKVAL (API_Status__c, &quot;Connected&quot;),
+  &quot;Healthy&quot;,
+  IF (ISPICKVAL (API_Status__c, &quot;Testing&quot;), &quot;Testing&quot;, &quot;Attention Required&quot;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Broker Health</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

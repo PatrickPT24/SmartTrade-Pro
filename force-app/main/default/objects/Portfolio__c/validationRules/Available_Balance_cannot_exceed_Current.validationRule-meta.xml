@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Available_Balance_cannot_exceed_Current</fullName>
+    <active>true</active>
+    <errorConditionFormula>Available_Balance__c &gt;
+Current_Value__c</errorConditionFormula>
+    <errorDisplayField>Available_Balance__c</errorDisplayField>
+    <errorMessage>Available Balance cannot exceed Current Value.</errorMessage>
+</ValidationRule>

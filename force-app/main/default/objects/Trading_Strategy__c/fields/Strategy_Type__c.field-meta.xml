@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Strategy_Type__c</fullName>
+    <label>Strategy Type</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Scalping</fullName>
+                <default>false</default>
+                <label>Scalping</label>
+            </value>
+            <value>
+                <fullName>Intraday</fullName>
+                <default>false</default>
+                <label>Intraday</label>
+            </value>
+            <value>
+                <fullName>Swing</fullName>
+                <default>false</default>
+                <label>Swing</label>
+            </value>
+            <value>
+                <fullName>Positional</fullName>
+                <default>false</default>
+                <label>Positional</label>
+            </value>
+            <value>
+                <fullName>Option Buying</fullName>
+                <default>false</default>
+                <label>Option Buying</label>
+            </value>
+            <value>
+                <fullName>Option Selling</fullName>
+                <default>false</default>
+                <label>Option Selling</label>
+            </value>
+            <value>
+                <fullName>Iron Condor</fullName>
+                <default>false</default>
+                <label>Iron Condor</label>
+            </value>
+            <value>
+                <fullName>Iron Butterfly</fullName>
+                <default>false</default>
+                <label>Iron Butterfly</label>
+            </value>
+            <value>
+                <fullName>Straddle</fullName>
+                <default>false</default>
+                <label>Straddle</label>
+            </value>
+            <value>
+                <fullName>Strangle</fullName>
+                <default>false</default>
+                <label>Strangle</label>
+            </value>
+            <value>
+                <fullName>Covered Call</fullName>
+                <default>false</default>
+                <label>Covered Call</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

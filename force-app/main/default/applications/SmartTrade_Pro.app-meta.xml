@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <logo>ChatGPT_Image_Jun_26_2026_01_37_59</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>SmartTrade Pro</label>
+    <navType>Standard</navType>
+    <tabs>Trader__c</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>Trading_Strategy__c</tabs>
+    <tabs>Trade_Request__c</tabs>
+    <tabs>Risk_Assessment__c</tabs>
+    <tabs>Portfolio__c</tabs>
+    <tabs>Broker_Account__c</tabs>
+    <tabs>Trade_Execution__c</tabs>
+    <tabs>Compliance_Review__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>SmartTrade_Pro_UtilityBar</utilityBar>
+</CustomApplication>

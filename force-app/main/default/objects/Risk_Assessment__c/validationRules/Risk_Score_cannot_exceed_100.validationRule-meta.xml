@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Risk_Score_cannot_exceed_100</fullName>
+    <active>true</active>
+    <errorConditionFormula>Risk_Score__c &gt; 100</errorConditionFormula>
+    <errorDisplayField>Risk_Score__c</errorDisplayField>
+    <errorMessage>Risk Score cannot exceed 100.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Realized_P_L__c</fullName>
+    <description>Profit/Loss after closed trades.</description>
+    <inlineHelpText>Profit/Loss after closed trades.</inlineHelpText>
+    <label>Realized P&amp;L</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

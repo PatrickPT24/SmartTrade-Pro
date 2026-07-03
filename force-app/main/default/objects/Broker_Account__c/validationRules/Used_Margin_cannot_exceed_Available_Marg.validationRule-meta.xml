@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Used_Margin_cannot_exceed_Available_Marg</fullName>
+    <active>true</active>
+    <errorConditionFormula>Used_Margin__c &lt; 0</errorConditionFormula>
+    <errorDisplayField>Used_Margin__c</errorDisplayField>
+    <errorMessage>Used Margin cannot exceed Available Margin + Used Margin.</errorMessage>
+</ValidationRule>

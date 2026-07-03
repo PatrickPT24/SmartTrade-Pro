@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Entry_Price_must_be_greater_than_Stop_Lo</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (ISPICKVAL (Trade_Type__c, &quot;Buy&quot;), Stop_Loss__c &gt;= Entry_Price__c)</errorConditionFormula>
+    <errorMessage>Entry Price must be greater than Stop Loss for Buy trades.</errorMessage>
+</ValidationRule>

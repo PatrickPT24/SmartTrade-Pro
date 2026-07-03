@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trading_Limit_Must_Be_Greater_Than_Zero</fullName>
+    <active>true</active>
+    <errorConditionFormula>Trading_Limit__c  &lt;= 0</errorConditionFormula>
+    <errorDisplayField>Trading_Limit__c</errorDisplayField>
+    <errorMessage>Trading limit must be greater than zero.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Broker_Name__c</fullName>
+    <label>Broker Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>5Paisa</fullName>
+                <default>false</default>
+                <label>5Paisa</label>
+            </value>
+            <value>
+                <fullName>Angel One</fullName>
+                <default>false</default>
+                <label>Angel One</label>
+            </value>
+            <value>
+                <fullName>Dhan</fullName>
+                <default>false</default>
+                <label>Dhan</label>
+            </value>
+            <value>
+                <fullName>Groww</fullName>
+                <default>false</default>
+                <label>Groww</label>
+            </value>
+            <value>
+                <fullName>HDFC Sky</fullName>
+                <default>false</default>
+                <label>HDFC Sky</label>
+            </value>
+            <value>
+                <fullName>ICICI Direct</fullName>
+                <default>false</default>
+                <label>ICICI Direct</label>
+            </value>
+            <value>
+                <fullName>Interactive Brokers</fullName>
+                <default>false</default>
+                <label>Interactive Brokers</label>
+            </value>
+            <value>
+                <fullName>Kotak Securities</fullName>
+                <default>false</default>
+                <label>Kotak Securities</label>
+            </value>
+            <value>
+                <fullName>Upstox</fullName>
+                <default>false</default>
+                <label>Upstox</label>
+            </value>
+            <value>
+                <fullName>Zerodha</fullName>
+                <default>false</default>
+                <label>Zerodha</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

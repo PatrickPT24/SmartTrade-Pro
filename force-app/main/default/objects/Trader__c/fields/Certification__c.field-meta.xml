@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Certification__c</fullName>
+    <label>Certification</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>true</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>NISM Certified</fullName>
+                <default>false</default>
+                <label>NISM Certified</label>
+            </value>
+            <value>
+                <fullName>NCFM Certified</fullName>
+                <default>false</default>
+                <label>NCFM Certified</label>
+            </value>
+            <value>
+                <fullName>NSE Certified</fullName>
+                <default>false</default>
+                <label>NSE Certified</label>
+            </value>
+            <value>
+                <fullName>SEBI Registered</fullName>
+                <default>false</default>
+                <label>SEBI Registered</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
