@@ -6,6 +6,7 @@
         <name>Profile</name>
     </types>
 
+    <!-- Permission Sets -->
     <types>
         <members>PS_Trade_Request_Create</members>
         <members>PS_Trade_Request_Approve</members>
@@ -16,6 +17,18 @@
         <members>PS_Report_Access</members>
         <members>PS_Dashboard_Access</members>
         <name>PermissionSet</name>
+    </types>
+
+    <!-- Permission Set Groups -->
+    <types>
+        <members>PSG_Trader</members>
+        <members>PSG_Senior_Trader</members>
+        <members>PSG_Trading_Manager</members>
+        <members>PSG_Risk_Analyst</members>
+        <members>PSG_Risk_Manager</members>
+        <members>PSG_Compliance_Officer</members>
+        <members>PSG_Portfolio_Manager</members>
+        <name>PermissionSetGroup</name>
     </types>
 
     <version>67.0</version>

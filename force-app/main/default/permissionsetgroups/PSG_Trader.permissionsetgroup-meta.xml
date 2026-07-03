@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Trader</label>
+    <permissionSets>PS_Dashboard_Access</permissionSets>
+    <permissionSets>PS_Report_Access</permissionSets>
+    <permissionSets>PS_Trade_Request_Create</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>
