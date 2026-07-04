@@ -41,6 +41,13 @@
         <name>Group</name>
     </types>
 
+    <!-- Queues -->
+    <types>
+        <members>Trade_Request_Queue</members>
+        <members>Compliance_Review_Queue</members>
+        <name>Queue</name>
+    </types>
+
     <version>67.0</version>
 
 </Package>
