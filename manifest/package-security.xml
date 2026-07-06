@@ -48,6 +48,12 @@
         <name>Queue</name>
     </types>
 
+    <!-- Approval Process -->
+    <types>
+        <members>Trade_Request__c.Trade_Request_Approval</members>
+        <name>ApprovalProcess</name>
+    </types>
+
     <version>67.0</version>
 
 </Package>
