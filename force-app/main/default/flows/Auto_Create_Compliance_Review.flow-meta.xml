@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>67.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Once a Trade Execution record is created, Salesforce should automatically create a Compliance Review record.</description>
+    <environments>Default</environments>
+    <interviewLabel>Auto Create Compliance Review {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Auto Create Compliance Review</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Auto_Create_Compliance_Review</name>
+        <label>Auto Create Compliance Review</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Findings__c</field>
+            <value>
+                <stringValue>Pending compliance verification. Auto-generated after trade execution.</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Review_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Severity__c</field>
+            <value>
+                <stringValue>Low</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Trade_Request__c</field>
+            <value>
+                <elementReference>$Record.Trade_Request__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Compliance_Review__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Auto_Create_Compliance_Review</targetReference>
+        </connector>
+        <object>Trade_Execution__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
