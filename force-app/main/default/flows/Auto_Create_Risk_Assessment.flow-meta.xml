@@ -1,29 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
-        <name>Compliance_review_Email</name>
-        <label>Compliance review Email</label>
+        <name>Trade_Request_is_Submitted</name>
+        <label>Trade Request is Submitted</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <actionName>Compliance_Review__c.EA_Compliance_Review</actionName>
+        <actionName>Trade_Request__c.EA_Trade_Submitted</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>SObjectRowId</name>
             <value>
-                <elementReference>$Record.Id</elementReference>
+                <elementReference>$Record.Trader__r.Id</elementReference>
                 <inputConfiguratorMode>Resource</inputConfiguratorMode>
             </value>
         </inputParameters>
-        <nameSegment>Compliance_Review__c.EA_Compliance_Review</nameSegment>
+        <nameSegment>Trade_Request__c.EA_Trade_Submitted</nameSegment>
         <offset>0</offset>
     </actionCalls>
     <apiVersion>67.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
-    <description>Once a Trade Execution record is created, Salesforce should automatically create a Compliance Review record.</description>
+    <description>Automatically creates a Risk Assessment whenever a Trade Request is created.</description>
     <environments>Default</environments>
-    <interviewLabel>Auto Create Compliance Review {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Auto Create Compliance Review</label>
+    <formulas>
+        <name>ExposureAmount</name>
+        <dataType>Currency</dataType>
+        <expression>{!$Record.Quantity__c} * {!$Record.Entry_Price__c}</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Auto Create Risk Assessment {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Auto Create Risk Assessment</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -44,47 +50,60 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordCreates>
-        <name>Auto_Create_Compliance_Review</name>
-        <label>Auto Create Compliance Review</label>
+        <description>Automatically creates a Risk Assessment whenever a Trade Request is created.</description>
+        <name>Create_Risk_Assessment</name>
+        <label>Create Risk Assessment</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Compliance_review_Email</targetReference>
+            <targetReference>Trade_Request_is_Submitted</targetReference>
         </connector>
         <inputAssignments>
-            <field>Findings__c</field>
+            <field>Assessment_Date__c</field>
             <value>
-                <stringValue>Pending compliance verification. Auto-generated after trade execution.</stringValue>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Review_Date__c</field>
+            <field>Assessment_Status__c</field>
             <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
+                <stringValue>Pending</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>Severity__c</field>
+            <field>Exposure_Amount__c</field>
             <value>
-                <stringValue>Low</stringValue>
+                <elementReference>ExposureAmount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Maximum_Drawdown__c</field>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Risk_Score__c</field>
+            <value>
+                <numberValue>0.0</numberValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>Trade_Request__c</field>
             <value>
-                <elementReference>$Record.Trade_Request__c</elementReference>
+                <elementReference>$Record.Id</elementReference>
             </value>
         </inputAssignments>
-        <object>Compliance_Review__c</object>
+        <object>Risk_Assessment__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <start>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Auto_Create_Compliance_Review</targetReference>
+            <targetReference>Create_Risk_Assessment</targetReference>
         </connector>
-        <object>Trade_Execution__c</object>
+        <object>Trade_Request__c</object>
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>

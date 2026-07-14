@@ -27,12 +27,20 @@
     </entryCriteria>
     <finalApprovalActions>
         <action>
+            <name>EA_Trade_Approved</name>
+            <type>Alert</type>
+        </action>
+        <action>
             <name>Final_Status_Update_if_Approved</name>
             <type>FieldUpdate</type>
         </action>
     </finalApprovalActions>
     <finalApprovalRecordLock>true</finalApprovalRecordLock>
     <finalRejectionActions>
+        <action>
+            <name>EA_Trade_Rejected</name>
+            <type>Alert</type>
+        </action>
         <action>
             <name>Final_Status_Update_If_Rejected</name>
             <type>FieldUpdate</type>
