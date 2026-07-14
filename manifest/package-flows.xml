@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <types>
+        <members>Auto_Create_Risk_Assessment</members>
+        <members>Auto_Create_Trade_Execution</members>
+        <members>Auto_Create_Compliance_Review</members>
+        <members>Auto_Update_Portfolio</members>
+        <name>Flow</name>
+    </types>
+
+    <version>67.0</version>
+
+</Package>
