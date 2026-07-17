@@ -1,28 +1,44 @@
 public with sharing class TradeRequestTriggerHandler {
 
-    public void beforeInsert(List<Trade_Request__c> newTrades) {
+    public void beforeInsert(List<Trade_Request__c> newTrades){
 
-        for (Trade_Request__c trade : newTrades) {
-
-            Decimal exposure =
+        Set<Id> traderIds = new Set<Id>();
+    
+        for(Trade_Request__c trade : newTrades){
+    
+            if(trade.Trader__c != null){
+                traderIds.add(trade.Trader__c);
+            }
+    
+        }
+    
+        Map<Id, Trader__c> traderMap =
+            TradeRequestService.getTradersByIds(traderIds);
+    
+        for(Trade_Request__c trade : newTrades){
+    
+            if(trade.Trader__c == null){
+                continue;
+            }
+    
+            Trader__c trader = traderMap.get(trade.Trader__c);
+    
+            Decimal tradeValue =
                 TradeRequestService.calculateExposure(
                     trade.Quantity__c,
                     trade.Entry_Price__c
                 );
-
-            if (!TradeRequestService.validateTradingLimit(
-                    trade.Trader__c,
-                    trade.Quantity__c,
-                    trade.Entry_Price__c
-                )) {
-
+    
+            if(tradeValue > trader.Trading_Limit__c){
+    
                 trade.addError(
-                    'Trade value exceeds the Trading Limit of the Trader.'
+                    'Trade value exceeds Trading Limit.'
                 );
+    
             }
-
+    
         }
-
+    
     }
 
     public void beforeUpdate(

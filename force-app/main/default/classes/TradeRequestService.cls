@@ -68,5 +68,20 @@ public with sharing class TradeRequestService {
     
         trade.Status__c = newStatus;
         update trade;
-    }    
+    }  
+    
+    /**
+ * Returns a map of Trader Id to Trader record.
+ */
+public static Map<Id, Trader__c> getTradersByIds(Set<Id> traderIds){
+
+    return new Map<Id, Trader__c>([
+        SELECT Id,
+               Trading_Limit__c,
+               Name
+        FROM Trader__c
+        WHERE Id IN :traderIds
+    ]);
+
+}
 }
